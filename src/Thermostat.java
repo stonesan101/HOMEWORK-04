@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
-public class Light extends SmartDevice{
+public class Thermostat extends SmartDevice{
     final String deviceName;
     final String type;
-    private int brightnessLevel;
+    private double temperature;
     private String status;
 
-    public Light(String deviceName) {
+    public Thermostat(String deviceName) {
         this.deviceName = deviceName;
-        this.type = "Light";
-        this.brightnessLevel = 0;
+        this.type = "Thermostat";
+        this.temperature = 0;
         this.status = "Off";
     }
 
     public void turnOn() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the desired brightness level (0-100): ");
-        this.brightnessLevel = sc.nextInt();
+        System.out.print("Enter the desired temperature: ");
+        this.temperature = sc.nextInt();
         status = "On";
     }
 
     public void turnOff() {
         status = "Off";
-        this.brightnessLevel = 0;
+        this.temperature = 0;
     }
 
     public void displayDeviceStatus() {
@@ -30,8 +30,7 @@ public class Light extends SmartDevice{
         System.out.println("Type: " + type);
         System.out.println("Status: " + status);
         if (status.equals("On")) {
-            System.out.println("Brightness Level: " + brightnessLevel);
+            System.out.println("Current Temperature: " + temperature);
         }
     }
-
 }
