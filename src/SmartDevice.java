@@ -1,19 +1,13 @@
 abstract class SmartDevice {
-    protected boolean isOn;
-    public SmartDevice() {
-        this.isOn = false;
+    protected void turnOn() {
     }
-    public void turnOn() {
-        this.isOn = true;
+
+    protected void turnOff() {
     }
-    public void turnOff() {
-        this.isOn = false;
+
+    protected void displayDeviceStatus() {
     }
-    public void displayStatus() {
-        if (isOn) {
-            System.out.println("The device is ON.");
-        } else {
-            System.out.println("The device is OFF.");
-        }
+    public void space() {
+        System.out.println("-----------------------------");
     }
 }
