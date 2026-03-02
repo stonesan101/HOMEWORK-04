@@ -1,3 +1,5 @@
+package smartHomeSystem;
+
 import java.util.Scanner;
 
 public class Utility {

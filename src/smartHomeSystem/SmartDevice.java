@@ -1,3 +1,5 @@
+package smartHomeSystem;
+
 abstract class SmartDevice extends Utility {
     protected void turnOn() {
     }

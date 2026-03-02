@@ -1,3 +1,6 @@
+import smartHomeSystem.DeviceManager;
+import smartHomeSystem.Utility;
+
 public class Main extends Utility {
     void main() {
         DeviceManager deviceManager = new DeviceManager();

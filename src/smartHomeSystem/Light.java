@@ -1,3 +1,5 @@
+package smartHomeSystem;
+
 public class Light extends SmartDevice {
     final String deviceName;
     final String type;
@@ -6,7 +8,7 @@ public class Light extends SmartDevice {
 
     public Light(String deviceName) {
         this.deviceName = deviceName;
-        this.type = "Light";
+        this.type = "smartHomeSystem.Light";
         if (shouldTurnOn()) {
             turnOn();
         } else {

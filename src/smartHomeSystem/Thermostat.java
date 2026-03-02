@@ -1,3 +1,5 @@
+package smartHomeSystem;
+
 public class Thermostat extends SmartDevice {
     final String deviceName;
     final String type;
@@ -6,7 +8,7 @@ public class Thermostat extends SmartDevice {
 
     public Thermostat(String deviceName) {
         this.deviceName = deviceName;
-        this.type = "Thermostat";
+        this.type = "smartHomeSystem.Thermostat";
         if(shouldTurnOn()){
             turnOn();
         }else{

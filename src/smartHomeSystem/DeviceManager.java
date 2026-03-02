@@ -1,29 +1,31 @@
+package smartHomeSystem;
+
 import java.util.ArrayList;
 
 public class DeviceManager extends Utility {
     private final ArrayList<SmartDevice> devices = new ArrayList<>();
 
     public void addDevice() {
-        // Initialize a SmartDevice variable to hold the new device
+        // Initialize a smartHomeSystem.SmartDevice variable to hold the new device
         SmartDevice device;
         // Prompt the user to select a device type
-        String deviceType = getUserInputString("Please select a new Light, Thermostat, or Skip: ");
+        String deviceType = getUserInputString("Please select a new smartHomeSystem.Light, smartHomeSystem.Thermostat, or Skip: ");
 
-        // Create a new Light or Thermostat based on user input, or skip if the user chooses to skip
+        // Create a new smartHomeSystem.Light or smartHomeSystem.Thermostat based on user input, or skip if the user chooses to skip
         switch (deviceType) {
             case "light" -> {
-                String lightName = getUserInputString("Enter the name of the Light: ");
+                String lightName = getUserInputString("Enter the name of the smartHomeSystem.Light: ");
                 device = new Light(lightName);
             }
             case "thermostat" -> {
-                String thermostatName = getUserInputString("Enter the name of the Thermostat: ");
+                String thermostatName = getUserInputString("Enter the name of the smartHomeSystem.Thermostat: ");
                 device = new Thermostat(thermostatName);
             }
             case "skip" -> {
                 return;
             }
             default -> {
-                IO.println("Invalid device type. Please enter 'Light' or 'Thermostat'.");
+                IO.println("Invalid device type. Please enter 'smartHomeSystem.Light' or 'smartHomeSystem.Thermostat'.");
                 space();
                 // Recursively call addDevice() to allow the user to try again
                 addDevice();
