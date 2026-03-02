@@ -1,4 +1,4 @@
-abstract class SmartDevice {
+abstract class SmartDevice extends Utility {
     protected void turnOn() {
     }
 
@@ -7,7 +7,8 @@ abstract class SmartDevice {
 
     protected void displayDeviceStatus() {
     }
-    public void space() {
-        System.out.println("-----------------------------");
+    // Returns true if user inputs "y" and false otherwise.
+    protected Boolean shouldTurnOn() {
+        return getUserInputString("Do you want to turn on the device? (y/n): ").equals("y");
     }
 }

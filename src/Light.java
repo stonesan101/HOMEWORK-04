@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Light extends SmartDevice{
+public class Light extends SmartDevice {
     final String deviceName;
     final String type;
     private int brightnessLevel;
@@ -9,14 +7,15 @@ public class Light extends SmartDevice{
     public Light(String deviceName) {
         this.deviceName = deviceName;
         this.type = "Light";
-        this.brightnessLevel = 0;
-        this.status = "Off";
+        if (shouldTurnOn()) {
+            turnOn();
+        } else {
+            turnOff();
+        }
     }
 
     public void turnOn() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the desired brightness level (0-100): ");
-        this.brightnessLevel = sc.nextInt();
+        this.brightnessLevel = getUserInputInt("Enter the desired brightness level (0-100): ");
         status = "On";
     }
 
@@ -26,11 +25,12 @@ public class Light extends SmartDevice{
     }
 
     public void displayDeviceStatus() {
-        System.out.println("Device: " + deviceName);
-        System.out.println("Type: " + type);
-        System.out.println("Status: " + status);
+        space();
+        IO.println("Device: " + deviceName);
+        IO.println("Type: " + type);
+        IO.println("Status: " + status);
         if (status.equals("On")) {
-            System.out.println("Brightness Level: " + brightnessLevel);
+            IO.println("Brightness Level: " + brightnessLevel);
         }
     }
 

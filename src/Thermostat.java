@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Thermostat extends SmartDevice{
+public class Thermostat extends SmartDevice {
     final String deviceName;
     final String type;
     private double temperature;
@@ -9,14 +7,15 @@ public class Thermostat extends SmartDevice{
     public Thermostat(String deviceName) {
         this.deviceName = deviceName;
         this.type = "Thermostat";
-        this.temperature = 0;
-        this.status = "Off";
+        if(shouldTurnOn()){
+            turnOn();
+        }else{
+            turnOff();
+        }
     }
 
     public void turnOn() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the desired temperature: ");
-        this.temperature = sc.nextInt();
+        this.temperature =  getUserInputDouble("Enter the desired temperature: ");
         status = "On";
     }
 
@@ -26,11 +25,13 @@ public class Thermostat extends SmartDevice{
     }
 
     public void displayDeviceStatus() {
-        System.out.println("Device: " + deviceName);
-        System.out.println("Type: " + type);
-        System.out.println("Status: " + status);
+        space();
+        IO.println("Device: " + deviceName);
+        IO.println("Type: " + type);
+        IO.println("Status: " + status);
         if (status.equals("On")) {
-            System.out.println("Current Temperature: " + temperature);
+            IO.println("Current Temperature: " + temperature);
         }
+        space();
     }
 }
