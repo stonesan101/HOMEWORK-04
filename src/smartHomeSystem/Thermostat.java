@@ -3,7 +3,7 @@ package smartHomeSystem;
 public class Thermostat extends SmartDevice {
     final String deviceName;
     final String type;
-    private double temperature;
+    private int temperature;
     private String status;
 
     public Thermostat(String deviceName) {
@@ -17,7 +17,7 @@ public class Thermostat extends SmartDevice {
     }
 
     public void turnOn() {
-        this.temperature =  getUserInputDouble("Enter the desired temperature: ");
+        this.temperature =  getUserInputInt("Enter the desired temperature: ");
         status = "On";
     }
 
@@ -34,6 +34,5 @@ public class Thermostat extends SmartDevice {
         if (status.equals("On")) {
             IO.println("Current Temperature: " + temperature);
         }
-        space();
     }
 }
