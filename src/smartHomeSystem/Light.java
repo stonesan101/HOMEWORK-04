@@ -32,7 +32,7 @@ public class Light extends SmartDevice {
         IO.println("Type: " + type);
         IO.println("Status: " + status);
         if (status.equals("On")) {
-            IO.println("Brightness Level: " + brightnessLevel);
+            IO.println("Brightness Level: " + brightnessLevel + "%");
         }
     }
 
