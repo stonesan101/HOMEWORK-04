@@ -32,6 +32,7 @@ public class DeviceManager extends Utility {
                 return;
             }
         }
+        space();
         // Add the newly created device to the list of devices
         devices.add(device);
     }

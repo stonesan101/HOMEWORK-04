@@ -8,7 +8,7 @@ public class Light extends SmartDevice {
 
     public Light(String deviceName) {
         this.deviceName = deviceName;
-        this.type = "smartHomeSystem.Light";
+        this.type = "Light";
         if (shouldTurnOn()) {
             turnOn();
         } else {

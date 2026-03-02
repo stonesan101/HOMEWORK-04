@@ -8,7 +8,7 @@ public class Thermostat extends SmartDevice {
 
     public Thermostat(String deviceName) {
         this.deviceName = deviceName;
-        this.type = "smartHomeSystem.Thermostat";
+        this.type = "Thermostat";
         if(shouldTurnOn()){
             turnOn();
         }else{
@@ -17,7 +17,7 @@ public class Thermostat extends SmartDevice {
     }
 
     public void turnOn() {
-        this.temperature =  getUserInputInt("Enter the desired temperature: ");
+        this.temperature =  getUserInputInt("Enter the desired temperature in F: ");
         status = "On";
     }
 
@@ -32,7 +32,7 @@ public class Thermostat extends SmartDevice {
         IO.println("Type: " + type);
         IO.println("Status: " + status);
         if (status.equals("On")) {
-            IO.println("Current Temperature: " + temperature);
+            IO.println("Current Temperature: " + temperature + "°F");
         }
     }
 }
