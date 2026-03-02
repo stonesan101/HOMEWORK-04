@@ -15,7 +15,8 @@ public class Utility {
     public int getUserInputInt(String prompt) {
         while (true) {
             try {
-                return Integer.parseInt(getUserInput(prompt));
+                int input = Integer.parseInt(getUserInput(prompt));
+                return Math.max(0, Math.min(input, 100)); // Ensure the input is between 0 and 100
             } catch (NumberFormatException e) {
                 IO.print("Invalid input. Please enter a valid number: ");
             }
